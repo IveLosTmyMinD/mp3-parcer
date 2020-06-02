@@ -35,12 +35,15 @@
             this.lb_parced = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.lb_check = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_namefile
             // 
-            this.bt_namefile.Location = new System.Drawing.Point(7, 61);
+            this.bt_namefile.Location = new System.Drawing.Point(7, 48);
             this.bt_namefile.Name = "bt_namefile";
             this.bt_namefile.Size = new System.Drawing.Size(242, 23);
             this.bt_namefile.TabIndex = 0;
@@ -60,7 +63,7 @@
             // lb_selected
             // 
             this.lb_selected.AutoSize = true;
-            this.lb_selected.Location = new System.Drawing.Point(4, 96);
+            this.lb_selected.Location = new System.Drawing.Point(4, 74);
             this.lb_selected.Name = "lb_selected";
             this.lb_selected.Size = new System.Drawing.Size(42, 13);
             this.lb_selected.TabIndex = 2;
@@ -68,48 +71,74 @@
             // 
             // bt_parce
             // 
-            this.bt_parce.Location = new System.Drawing.Point(7, 122);
+            this.bt_parce.Location = new System.Drawing.Point(7, 90);
             this.bt_parce.Name = "bt_parce";
             this.bt_parce.Size = new System.Drawing.Size(242, 23);
             this.bt_parce.TabIndex = 3;
             this.bt_parce.Text = "Прочитать";
             this.bt_parce.UseVisualStyleBackColor = true;
+            this.bt_parce.Click += new System.EventHandler(this.bt_parce_Click);
             // 
             // lb_parced
             // 
             this.lb_parced.AutoSize = true;
-            this.lb_parced.Location = new System.Drawing.Point(4, 161);
+            this.lb_parced.Location = new System.Drawing.Point(4, 116);
             this.lb_parced.Name = "lb_parced";
             this.lb_parced.Size = new System.Drawing.Size(64, 13);
             this.lb_parced.TabIndex = 4;
             this.lb_parced.Text = "Прочитано:";
+            this.lb_parced.Visible = false;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "txt файлы(*.txt)|*.txt";
+            this.openFileDialog1.Title = "Открыть текстовый документ";
             // 
-            // lb_check
+            // saveFileDialog1
             // 
-            this.lb_check.AutoSize = true;
-            this.lb_check.Location = new System.Drawing.Point(7, 207);
-            this.lb_check.Name = "lb_check";
-            this.lb_check.Size = new System.Drawing.Size(38, 13);
-            this.lb_check.TabIndex = 5;
-            this.lb_check.Text = "Check";
+            this.saveFileDialog1.Filter = "txt файлы|*.txt";
+            this.saveFileDialog1.OverwritePrompt = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выходToolStripMenuItem,
+            this.оПрограммеToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(261, 24);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
+            // оПрограммеToolStripMenuItem
+            // 
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 350);
-            this.Controls.Add(this.lb_check);
+            this.ClientSize = new System.Drawing.Size(261, 141);
             this.Controls.Add(this.lb_parced);
             this.Controls.Add(this.bt_parce);
             this.Controls.Add(this.lb_selected);
             this.Controls.Add(this.lb_choose);
             this.Controls.Add(this.bt_namefile);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "mainForm";
             this.Text = "MP3 Parcer";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +153,9 @@
         private System.Windows.Forms.Label lb_parced;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Label lb_check;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 
