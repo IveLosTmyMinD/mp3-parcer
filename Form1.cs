@@ -40,6 +40,17 @@ namespace mp3_parcer
             Close();
         }
 
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmAbout about = new fmAbout();
+            about.Show();
+        }
+
+        private void инструкцияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/IveLosTmyMinD/mp3-parcer");
+        }
+
         private void bt_parce_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
